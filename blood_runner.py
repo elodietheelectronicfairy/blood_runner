@@ -1,11 +1,18 @@
 import os
+import time
 
 #ok so I assume you have cloned this and we can start!
 
 def clear():
     os.system('cls' if os.name=='nt' else 'clear')
 
-def main_menu
+
+def game():
+    clear()
+    #add ascii for upside down heart connecting to border of menu with "animation" before seccond alpha
+    
+    
+def main_menu():
     print ("Welcome to:")
     print ("""
 ______ _                 _  ______
@@ -28,10 +35,13 @@ ______ _                 _  ______
     main = input(":$ ")
 
     if main in ('1');
-        Ok starting game!
+        clear()
+        time.sleep(5)
+        print ("Loading game")
+        #replace with ascii before first beta!
         game()
     elif main in ('2');
-        help()
+        #help()
     elif menu in ('0')
         exit()
     else;
@@ -39,3 +49,4 @@ ______ _                 _  ______
         print ("wat?")
         main_menu()
     
+mzin_menu()
