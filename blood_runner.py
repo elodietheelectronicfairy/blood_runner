@@ -10,54 +10,640 @@ def clear():
 def game():
     clear()
     print ("""
-                                  `ssh/ -dhso
-                       .yym/  `N/ss`d.:hy
-                       -m-.m` `m .d/s  m`
-                .-:/:. `m  /y :y  sm/ `N
-             /hhssssym`.d   :sy-  `+`  /s+`
-             ss:-.`` y//y                -h:
-             oo      o+d-                 `h/
-             ++      +m/                   `h-             `-/++yy+
- `:-         ++      s/                     -d      `.:/++oo/-`-+mh`
- shhs/.      ++      m`          `:.         y+-/++o+/-.``  :/ossoyo-
- `/y+/ooo++++ss     -h          -msd:-://+++oo+:.``     .-////////mys
- /sys+:   ````h     :y          s+-:::-.````        ./+o/-...```..--`
- +yy+++++++++/d     -h          +s               .+o/.`
- :/-``````````d`    `m          `d/.            +o.   -/+hy-
--dd+o+:.      h.     h-          -dd.         `shsso+yo:+s+.`..
- -++///+o+++//m.     -h`         .y+         `syyo/hyyyh+:/+/hss
-  .+sy: `...`-d ....` /y-       -y-          ssdys:/oyhyyy+++so:
-.yy++++++//+omyoooooso/+hs.    :y.          -dh-++`  :hdoys`
-.yy:.`      yy+/-...-+yooyho. /y.`...`      +sh.`     --s/oo`
-           /yy/---::/os-.-ysmydssssssss/-   h/.:++-     `h.:y:
-          .hs:------.`    o+:oho:----:+yos``N-`shss+    /s/:-y/
-          hoo            -y+o:-y/.     .hooyy`s//hho+  ++s--y`y+
-          ds-:::::-.    /s+o   `:+o+/::-ysmh`o/  m:hy` ho:  d .d-
-         `doyh:-.-:ss  :yo/        `.---:ho`:o  :h hd  hh   d  .d.
-         `m`syso+++/-  o/h              `m  h-./o` :+  oy   d`  :y`
-          m`oooooo+/:- :oh              -y :y/:.       `.   o+`  +s
-          y/y`.-:/+osy/ -h              ++ /s                /s   y/
-          /y.o:     .+s                 /s  y:                y/  `d-
-          `h: ++                        `d. `s/`              `h-  /y
-           .d. d`                        :y   /s:`             .h.  m.
-            yh -y.                        s+   `:o/`            .h- o+
-            yys`.+o`                      `d.     /s.            :s -d
-            s//h. /s.                      -h.     .y/         `/o+ .d
-            +o -h- .s+.                     -h.      o+`       .d`  /y
-            :y  .so` .+o.                    -h.      /y`   `` .d`  s:
-            :y    :h:  .o+.`                  .h-      +o  :soys.  .y
-            /s     :ms-` ./++++:.`             /s      `h-.d. .    h-
-            /s`````-y`/oo+-`` `-:+o+:``` ``--:/y-       `/+.      so
-            /moooosdy    `:+oo+:.` `-/++/++:--.                 -y/
-             -+++++:`         `-/+oys+/:-.````              `./so`
-                                   y+`.-:/+++shoooooooooooooo/-
-                                   y+`.----.`/s
-                                   smo:::::/+do
-                                   `:+ooooooo+`
 
+
+
+    C""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Cu""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Cur""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Curr""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Curre""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Curren""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current L""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Lo""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Loc""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Loca""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Locat""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Locati""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Locatio""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location""")
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:""")
+    time.sleep(1)
+    print ("""
+
+
+    The Heart""")
+    time.sleep(1)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    C
     """)
-    #add ascii for heart with "animation before seccond alpha"
+    time.sleep(.05)
+    clear()
+    print ("""
 
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Cu
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Cur
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Curr
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Curre
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Curren
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current H
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current He
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Hea
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Hear
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart R
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Ra
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rat
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (B
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (BP
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (BPM
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (BPM)
+    """)
+    time.sleep(.05)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (BPM):
+    """)
+    time.sleep(1)
+    clear()
+    print ("""
+
+
+
+    Current Location:
+
+
+
+    The Heart
+
+
+
+
+
+
+    Current Heart Rate (BPM):
+    """)
 
 def main_menu():
     print ("Welcome to:")
@@ -74,9 +660,11 @@ ______ _                 _  ______
 
     print ("What would you like to do?")
     print ("""
-    1. Start game
-    2. Get help
-    0. Exit
+|===================|
+|   1. Start game   |
+|   2. Get help     |
+|   0. Exit         |
+|===================|
     """)
 
     main = input(":$ ")
