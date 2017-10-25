@@ -6,6 +6,10 @@ import time
 def clear():
     os.system('cls' if os.name=='nt' else 'clear')
 
+#declare variables for start of game
+location = "heart"
+bpm = "60"
+
 
 def game():
     clear()
@@ -616,7 +620,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -635,7 +639,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -643,6 +647,26 @@ def game():
 
 
     Current Heart Rate (BPM):
+
+
+
+    """ + bpm + """
+    """)
+    time.sleep(2)
+    clear()
+    print ("""
+                                                            |===========================================|
+                                                            |     You are in:     Your heart rate is:   |
+                                                            |        """ + location + """                 """ + bpm + """           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |                                           |
+                                                            |===========================================|
     """)
 
 def main_menu():
