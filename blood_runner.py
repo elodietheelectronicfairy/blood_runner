@@ -9,9 +9,9 @@ def clear():
 
 def game():
     clear()
-    #add ascii for upside down heart connecting to border of menu with "animation" before seccond alpha
-    
-    
+    #add ascii for heart with "animation before seccond alpha"
+
+
 def main_menu():
     print ("Welcome to:")
     print ("""
@@ -34,19 +34,30 @@ ______ _                 _  ______
 
     main = input(":$ ")
 
-    if main in ('1');
+    if main in ('1'):
         clear()
         time.sleep(5)
-        print ("Loading game")
-        #replace with ascii before first beta!
+        print ("""
+        .____                     .___.__                   ________
+|    |    _________     __| _/|__| ____    ____    /  _____/_____    _____   ____
+|    |   /  _ \__  \   / __ | |  |/    \  / ___\  /   \  ___\__  \  /     \_/ __ \ 
+|    |__(  <_> ) __ \_/ /_/ | |  |   |  \/ /_/  > \    \_\  \/ __ \|  Y Y  \  ___/
+|_______ \____(____  /\____ | |__|___|  /\___  /   \______  (____  /__|_|  /\___  >_______________________
+        \/         \/      \/         \//_____/           \/     \/      \/     \/_____/_____/_____/_____/
+
+        """)
         game()
-    elif main in ('2');
+    elif main in ('2'):
         #help()
-    elif menu in ('0')
+        print ("Not here yet!")
+    elif main in ('0'):
+        clear()
+        print ("[*]Ok bye now[*]")
         exit()
-    else;
+    else:
         clear()
         print ("wat?")
         main_menu()
-    
-mzin_menu()
+
+clear()
+main_menu()
