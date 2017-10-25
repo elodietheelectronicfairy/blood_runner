@@ -9,6 +9,10 @@ def clear():
 #declare variables for start of game
 location = "heart"
 bpm = "60"
+oxy = "no"
+
+#escape code for errors:
+#\033[0;37;41m TEXT
 
 
 def game():
@@ -134,7 +138,7 @@ def game():
     print ("""
 
 
-    The Heart""")
+    """ + location + """""")
     time.sleep(1)
     clear()
     print ("""
@@ -145,7 +149,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -164,7 +168,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -183,7 +187,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -202,7 +206,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -221,7 +225,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -240,7 +244,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -259,7 +263,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -278,7 +282,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -297,7 +301,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -316,7 +320,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -335,7 +339,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -354,7 +358,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -373,7 +377,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -392,7 +396,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -411,7 +415,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -430,7 +434,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -449,7 +453,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -468,7 +472,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -487,7 +491,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -506,7 +510,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -525,7 +529,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -544,7 +548,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -563,7 +567,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -582,7 +586,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -601,7 +605,7 @@ def game():
 
 
 
-    The Heart
+    """ + location + """
 
 
 
@@ -659,13 +663,13 @@ def game():
                                                             |     You are in:     Your heart rate is:   |
                                                             |        """ + location + """                 """ + bpm + """           |
                                                             |                                           |
+                                                            |         Where do you want to go?          |
                                                             |                                           |
-                                                            |                                           |
-                                                            |                                           |
-                                                            |                                           |
-                                                            |                                           |
-                                                            |                                           |
-                                                            |                                           |
+                                                            |  1. Lungs                                 |
+                                                            |  2. Heart                                 |
+                                                            |  3. Brain                                 |
+                                                            |  4. Other vital organs                    |
+                                                            |  5. Other body part                        |
                                                             |===========================================|
     """)
 
