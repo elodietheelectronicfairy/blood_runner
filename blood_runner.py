@@ -8,13 +8,27 @@ def clear():
 
 #declare variables for start of game
 location = "heart"
-bpm = "60"
+bpm = 60
 oxy = "no"
 
 
 #escape code for errors:
 #\033[0;37;41m TEXT
 #test
+
+
+def lungs():
+    if oxy in ('yes'):
+        print ("Oh no! Your blood was already oxygenated and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+        print ("To 
+    else:
+        #add question here and correct if statement
+        if 1 == 1:
+            oxy = "yes"
+        else:
+            print ("No that's not right")
+            bpm = bpm + 10
+
 
 
 def game():
@@ -659,8 +673,9 @@ def game():
     """ + bpm + """
     """)
     time.sleep(2)
-    clear()
-    print ("""
+    def menu():
+        clear()
+        print ("""
                                                             |===========================================|
                                                             |     You are in:     Your heart rate is:   |
                                                             |        """ + location + """                 """ + bpm + """           |
@@ -668,12 +683,30 @@ def game():
                                                             |         Where do you want to go?          |
                                                             |                                           |
                                                             |  1. Lungs                                 |
-                                                            |  2. Heart                                 |
-                                                            |  3. Brain                                 |
-                                                            |  4. Other vital organs                    |
-                                                            |  5. Other body part                        |
+                                                            |  2. Brain                                 |
+                                                            |  3. Other vital organs                    |
+                                                            |  4. Other body parts                      |
+                                                            |                                           |
                                                             |===========================================|
-    """)
+        """)
+        menu = input(location + "@" + bpm + "bpm\ "
+        if menu in ('1'):
+            lungs()
+            menu()
+        elif menu in ('2'):
+            brain()
+            menu()
+        elif menu in ('3'):
+            viorg()
+            menu()
+        elif menu in ('4'):
+            part()
+            menu()
+        else:
+            print ("Wat")
+            menu()
+
+ 
 
 def main_menu():
     print ("Welcome to:")
