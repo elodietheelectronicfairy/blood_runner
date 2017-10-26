@@ -8,8 +8,14 @@ def clear():
 
 #declare variables for start of game
 location = "heart"
-bpm = 60
-oxy = "no"
+bpm = "60"
+oxy = 0
+first_run = 1
+brain = 0
+viorgans = 0
+miscbody = 0
+lung = 0
+
 
 
 #escape code for errors:
@@ -18,20 +24,68 @@ oxy = "no"
 
 
 def lungs():
-    if oxy in ('yes'):
+    if lung == 5:
+        print ("Oh no! You came back so many times that your blood never went anywhere else. The body now has barely enough oxygen to live. If you fail one more time you will die of just about everything you can die of")
+    elif lung >= 6:
+        print 
+    global bpm
+    global oxy
+    global location
+    if oxy == 1:
         print ("Oh no! Your blood was already oxygenated and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
-        print ("To 
+        print ("To reduce the increase in heart rate answer the following question correctly:")
+        if 1 == 1:
+            print ("Phew that was close")
+            print ("Your heart rate went up 20 bpm try and get it back down by answering the questions correctly!")
+            bpm = bpm + 20
+            menu2()
+        else:
+            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly")
+            bpm = bpm * 2
+            menu2()
     else:
         #add question here and correct if statement
-        if 1 == 1:
-            oxy = "yes"
+        test = input("test")
+        if test in ('1'):
+            oxy = 1
+            menu2()
         else:
-            print ("No that's not right")
+            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10. You need to get the quesion right if you want your blood to be oxygenated")
             bpm = bpm + 10
+            menu2()
+
+def brain():
+    global bpm
+    global oxy
+    global location
+    if oxy == 1:
+        print ("Oh no! Your blood was already oxygenated and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+        print ("To reduce the increase in heart rate answer the following question correctly:")
+        if 1 == 1:
+            print ("Phew that was close")
+            print ("Your heart rate went up 20 bpm try and get it back down by answering the questions correctly!")
+            bpm = bpm + 20
+            menu2()
+        else:
+            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly")
+            bpm = bpm * 2
+            menu2()
+    else:
+        #add question here and correct if statement
+        test = input("test")
+        if test in ('1'):
+
+            menu2()
+        else:
+            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10")
+            bpm = bpm + 10
+            menu2()
 
 
 
 def game():
+    global first_run
+    first_run = 0
     clear()
     print ("""
 
@@ -689,24 +743,20 @@ def game():
                                                             |                                           |
                                                             |===========================================|
         """)
-        menu = input(location + "@" + bpm + "bpm\ "
-        if menu in ('1'):
+        menu = input(location + "@" + bpm + "bpm\ ")
+        if menu == ('1'):
             lungs()
-            menu()
         elif menu in ('2'):
             brain()
-            menu()
         elif menu in ('3'):
             viorg()
-            menu()
         elif menu in ('4'):
             part()
-            menu()
         else:
             print ("Wat")
             menu()
+    menu()
 
- 
 
 def main_menu():
     print ("Welcome to:")
@@ -1666,4 +1716,7 @@ ______ _                 _  ______
         main_menu()
 
 clear()
-main_menu()
+if first_run == 1:
+    main_menu()
+else:
+    menu()
