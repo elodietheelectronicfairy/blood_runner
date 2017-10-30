@@ -5,3 +5,5 @@ oxy = 0
 vbrain = 0
 viorgans = 0
 miscbody = 0
+goto = "heart"
+unlim = 0
