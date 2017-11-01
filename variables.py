@@ -1,0 +1,11 @@
+location = "heart"
+bpm = "60"
+bpmint = 60
+oxy = 0
+brain = 0
+viorgans = 0
+miscbody = 0
+goto = "heart"
+unlim = 0
+deat = 250
+warn = 200
