@@ -1569,7 +1569,7 @@ def game():
                     else:
                         wat
                 else:
-                    print ("Oh no! Your blood has already been oxygenated and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been oxygenated and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = random.randint(0,21)
                     if test == 0:
@@ -1579,13 +1579,13 @@ def game():
                         b = "pump oxygenated blood cells around the body"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1596,13 +1596,13 @@ def game():
                         b = "all of the above"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1613,13 +1613,13 @@ def game():
                         b = "the heart"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1630,13 +1630,13 @@ def game():
                         b = "it makes you faint because it is slowly shutting down and dying"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1647,13 +1647,13 @@ def game():
                         b = "arteries"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1664,13 +1664,13 @@ def game():
                         b = "through the veins"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1681,13 +1681,13 @@ def game():
                         b = "haemaglobin"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1698,13 +1698,13 @@ def game():
                         b = "capillary"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1715,13 +1715,13 @@ def game():
                         b = "plasma"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1732,13 +1732,13 @@ def game():
                         b = "platelets"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1781,13 +1781,13 @@ def game():
                         b = "left ventricle"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1798,13 +1798,13 @@ def game():
                         b = "vein"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1815,13 +1815,13 @@ def game():
                         b = "2"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1832,13 +1832,13 @@ def game():
                         b = "vena cava"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1849,13 +1849,13 @@ def game():
                         b = "coronary"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1866,13 +1866,13 @@ def game():
                         b = "brain stem"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1883,13 +1883,13 @@ def game():
                         b = "4"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1900,13 +1900,13 @@ def game():
                         b = "the oxygen in it is replaced with carbon dioxide"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1917,13 +1917,13 @@ def game():
                         b = "they carry blood to all parts of the body"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1934,13 +1934,13 @@ def game():
                         b = "white blood cells"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1951,13 +1951,13 @@ def game():
                         b = "plasma"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -1969,16 +1969,16 @@ def game():
                 clear()
                 global menu
                 if g.brain == 1:
-                    print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
                     if test in ('test'):
-                        print ("Phew that was close")
+                        print ("\033[1;31;40m Phew that was close")
                         print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                         g.bpmint = g.bpmint + 20
                         game_menu()
                     else:
-                        print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                        print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
@@ -2844,16 +2844,16 @@ def game():
 
     Answer the question corretly to oxygenate the blood
                     """)
-                    print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
                     if test in ('test'):
-                        print ("Phew that was close")
+                        print ("\033[1;31;40m Phew that was close")
                         print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                         g.bpmint = g.bpmint + 20
                         game_menu()
                     else:
-                        print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                        print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
@@ -3574,16 +3574,16 @@ def game():
             elif main in ('4'):
                 global menu
                 if g.miscbody == 1:
-                    print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
                     if test in ('test'):
-                        print ("Phew that was close")
+                        print ("\033[1;31;40m Phew that was close")
                         print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                         g.bpmint = g.bpmint + 20
                         game_menu()
                     else:
-                        print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                        print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
@@ -5185,13 +5185,13 @@ Answer the question corretly to oxygenate the blood
                         b = "pump oxygenated blood cells around the body"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5202,13 +5202,13 @@ Answer the question corretly to oxygenate the blood
                         b = "all of the above"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5219,13 +5219,13 @@ Answer the question corretly to oxygenate the blood
                         b = "the heart"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5236,13 +5236,13 @@ Answer the question corretly to oxygenate the blood
                         b = "it makes you faint because it is slowly shutting down and dying"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5253,13 +5253,13 @@ Answer the question corretly to oxygenate the blood
                         b = "arteries"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5270,13 +5270,13 @@ Answer the question corretly to oxygenate the blood
                         b = "through the veins"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5287,13 +5287,13 @@ Answer the question corretly to oxygenate the blood
                         b = "haemaglobin"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5304,13 +5304,13 @@ Answer the question corretly to oxygenate the blood
                         b = "capillary"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5321,13 +5321,13 @@ Answer the question corretly to oxygenate the blood
                         b = "plasma"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5338,13 +5338,13 @@ Answer the question corretly to oxygenate the blood
                         b = "platelets"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5387,13 +5387,13 @@ Answer the question corretly to oxygenate the blood
                         b = "left ventricle"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5404,13 +5404,13 @@ Answer the question corretly to oxygenate the blood
                         b = "vein"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5421,13 +5421,13 @@ Answer the question corretly to oxygenate the blood
                         b = "2"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5438,13 +5438,13 @@ Answer the question corretly to oxygenate the blood
                         b = "vena cava"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5455,13 +5455,13 @@ Answer the question corretly to oxygenate the blood
                         b = "coronary"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5472,13 +5472,13 @@ Answer the question corretly to oxygenate the blood
                         b = "brain stem"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5489,13 +5489,13 @@ Answer the question corretly to oxygenate the blood
                         b = "4"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5506,13 +5506,13 @@ Answer the question corretly to oxygenate the blood
                         b = "the oxygen in it is replaced with carbon dioxide"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5523,13 +5523,13 @@ Answer the question corretly to oxygenate the blood
                         b = "they carry blood to all parts of the body"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5540,13 +5540,13 @@ Answer the question corretly to oxygenate the blood
                         b = "white blood cells"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5557,13 +5557,13 @@ Answer the question corretly to oxygenate the blood
                         b = "plasma"
                         answer = input(":$ ")
                         if answer.lower() == a:
-                            print ("Phew that was close")
+                            print ("\033[1;31;40m Phew that was close")
                             print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 20
                             game_menu()
                         else:
-                            print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                            print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint * 2
                             game_menu()
@@ -5575,16 +5575,16 @@ Answer the question corretly to oxygenate the blood
                 clear()
                 global menu
                 if g.brain == 1:
-                    print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
                     if test in ('test'):
-                        print ("Phew that was close")
+                        print ("\033[1;31;40m Phew that was close")
                         print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                         g.bpmint = g.bpmint + 20
                         game_menu()
                     else:
-                        print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                        print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
@@ -6450,16 +6450,16 @@ Answer the question corretly to oxygenate the blood
 
     Answer the question corretly to oxygenate the blood
                     """)
-                    print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
                     if test in ('test'):
-                        print ("Phew that was close")
+                        print ("\033[1;31;40m Phew that was close")
                         print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                         g.bpmint = g.bpmint + 20
                         game_menu()
                     else:
-                        print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                        print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
@@ -7180,16 +7180,16 @@ Answer the question corretly to oxygenate the blood
             elif main in ('4'):
                 global menu
                 if g.miscbody == 1:
-                    print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
+                    print ("\033[1;31;40m Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
                     if test in ('test'):
-                        print ("Phew that was close")
+                        print ("\033[1;31;40m Phew that was close")
                         print ("Your heart rate only went up 20 bpm! Try and get it back down by answering the questions correctly!")
                         g.bpmint = g.bpmint + 20
                         game_menu()
                     else:
-                        print ("Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
+                        print ("\033[1;31;40m Oh no! Unfortunately that was wrong and your heart rate doubled! Try and get it back down by answering questions correctly next time")
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
@@ -8000,7 +8000,7 @@ ______ _                 _  ______
     print ("""
 |=======================================================================================================|
 |   1. Normie mode (for those who want a simple quick game)                                             |
-|   2. irl mode (the game never stops so you play until you die or until you give up)                   |
+|   2. Unlimited mode (the game never stops so you play until you die or until you give up)             |
 |   3. Hard mode (death at 150 bpm)                                                                     |
 |   4. Hard mode + Unlimited mode (you can die more easily AND you can't win) PREPARE TO BE FRUSTRATED! |
 |   0. Exits game (type exit to exit from main menu inside game)                                        |
