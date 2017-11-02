@@ -651,6 +651,10 @@ def game():
     """)
     time.sleep(2)
     def game_menu():
+        if g.oxy == 1:
+            g.oxygen = "blood IS oxygenated   "
+        else:
+            g.oxygen = "blood ISN'T oxygenated"
         clear()
         if g.brain + g.oxy + g.viorgans + g.miscbody == 4 and g.unlim == 0:
             print ("""\033[1;32;40m
@@ -727,6 +731,12 @@ def game():
             print ("[*]Quitting[*]")
             exit()
 
+        elif g.brain + g.oxy + g.viorgans + g.miscbody == 4 and g.unlim == 1:
+            g.brain = 0
+            g.oxy = 0
+            g.viorgans = 0
+            g.miscbody = 0
+            game_menu()
         elif g.bpmint >= g.deat:
             print ("""\033[1;31;40m
                                                                   ,----,
@@ -766,7 +776,9 @@ def game():
                                                             |     You are in:     Your heart rate is:   |
                                                             |        """ + g.location + """                 """ + str(g.bpmint) + """           |
                                                             |                                           |
-                                                            |         Where do you want to go?          |
+                                                            |           """ + g.oxygen + """          |
+                                                            |                                           |
+                                                            |          Where do you want to go?         |
                                                             |                                           |
                                                             |  1. Lungs                                 |
                                                             |  2. Brain                                 |
@@ -777,10 +789,79 @@ def game():
             """)
             main = input(g.location + "@" + g.bpm + "bpm\ ")
             if main == ('1'):
+                clear()
                 global menu
                 if g.oxy == 0:
+                    clear()
+                    print ("""\033[1;31;40m
+
+              *, ,   ,*/*(
+              (#(/,,/((#*,
+               **%(//#%(/**
+          /####*.#/(/(#/*,,,*//
+          #/,*#**(%#(((((((((
+        #%(/**%(#%&%(/#%&(#(*
+      (%//(##%&%&#%#(*#%&/#(.
+     (***/(##%&&@%#((*(%#/#/
+    (*,,*/(#%&&&%&#(((#%&%&%&&
+    /,,**/##%&%&#(/////##%&%&&&
+    /****/##%&%&(//*,,*(%&%&%&&%
+    (**//%(####((/*,,,*(%&%&%&&&,
+     (//#/((((((//**,*/(/%&^%&&&%
+      (//////((((*//*//(#&%&%&&
+       (//***//((*(//(#(#%$%&&&
+       ./*,,,**//(((/#(%###%$%&&&
+         (*,,,***//((((####%@%&&&
+          ((/****//(((##(###@%&&&.
+            ####((((#######%$%&&&/
+               .$$$$$$$$$$$$&&&&&
+                     &&&&&&&%#
+
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+              *, ,   ,*/*(
+              (#(/,,/((#*,
+               **%(//#%(/**
+          /####*.#/(/(#/*,,,*//
+          #/,*#**(%#(((((((((
+        #%(/**%(#%&%(/#%&(#(*
+      (%//(##%&%&#%#(*#%&/#(.
+     (***/(##%&&@%#((*(%#/#/
+    (*,,*/(#%&&&%&#(((#%&%&%&&
+    /,,**/##%&%&#(/////##%&%&&&
+    /****/##%&%&(//*,,*(%&%&%&&%
+    (**//%(####((/*,,,*(%&%&%&&&,
+     (//#/((((((//**,*/(/%&^%&&&%
+      (//////((((*//*//(#&%&%&&
+       (//***//((*(//(#(#%$%&&&
+       ./*,,,**//(((/#(%###%$%&&&
+         (*,,,***//((((####%@%&&&
+          ((/****//(((##(###@%&&&.
+            ####((((#######%$%&&&/
+               .$$$$$$$$$$$$&&&&&
+                     &&&&&&&%#
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+     _____                                    _   _               _   _            _     _                 _
+    |  _  |                                  | | (_)             | | | |          | |   | |               | |
+    | | | |_  ____   _  __ _  ___ _ __   __ _| |_ _ _ __   __ _  | |_| |__   ___  | |__ | | ___   ___   __| |
+    | | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` | | __| '_ \ / _ \ | '_ \| |/ _ \ / _ \ / _` |
+    \ \_/ />  <|  |_| | (_| |  __/ | | | (_| | |_| | | | | (_| | | |_| | | |  __/ | |_) | | (_) | (_) | (_| |_ _ _
+     \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, |  \__|_| |_|\___| |_.__/|_|\___/ \___/ \__,_(_|_|_)
+                  __/ | __/ |                              __/ |
+                 |___/ |___/                              |___/
+
+    Answer the question corretly to oxygenate the blood
+                    """)
                     g.goto = "lungs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -808,7 +889,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -840,7 +921,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -872,7 +953,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -904,7 +985,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -936,7 +1017,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -968,7 +1049,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1000,7 +1081,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1032,7 +1113,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1064,7 +1145,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1096,7 +1177,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1128,7 +1209,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1160,7 +1241,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1192,7 +1273,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1224,14 +1305,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -1256,7 +1337,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1288,7 +1369,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1320,7 +1401,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1352,7 +1433,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1384,7 +1465,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1416,7 +1497,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1448,7 +1529,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1480,7 +1561,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1688,7 +1769,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1746,7 +1827,7 @@ def game():
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -1885,6 +1966,7 @@ def game():
 
 
             elif main in ('2'):
+                clear()
                 global menu
                 if g.brain == 1:
                     print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
@@ -1900,8 +1982,89 @@ def game():
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
+                    clear()
+                    print ("""\033[1;31;40m
+
+                                                ..   %
+                                          ###  *.      /#
+                                  %                           .,/#%$#.
+                                  *                                     .%,
+    .%.                          *                            *#@@@@@@@&%   %
+        %,                       #                           *@@@@@@@@@@@@&.  %
+           %                     %                           %@@@@@@@@@@@@@@%  #
+             %                  %                            #@@@@@@@@@@@@@@@@( (
+               #(     .,,.    //                        /(@@&@@@@@@@@@@@@@@@@@@* %
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@%  #
+                                                      %@@@@@@@@@@@@@@@@@@@@@@@@@# *
+                                                      /&@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                   .%(@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                (&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+                                                 %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %
+                                                 %&@@@@@@@@@@@@@@@@@@@@@@@@@@@@% ,
+                                          ,/(#(   ,#@@@@@@@@@@@@@@@@@@@@@@@@@%# (
+                                 .%#.           %    .%@@@@@@@@@@@@@@@@@@@@%#  %
+                             .%.                 .%   ,&@@@@@@@@@@@@@@@@@%.  */
+                          %/                        ,%  (%&@@@@@@@@@(%(    (/
+                      #(                                ,%&,         .(%(
+                  .%.
+               %(
+           /%
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+                                                ..   %
+                                          ###  *.      /#
+                                  %                           .,/#%$#.
+                                  *                                     .%,
+    .%.                          *                            *#@@@@@@@&%   %
+        %,                       #                           *@@@@@@@@@@@@&.  %
+           %                     %                           %@@@@@@@@@@@@@@%  #
+             %                  %                            #@@@@@@@@@@@@@@@@( (
+               #(     .,,.    //                        /(@@&@@@@@@@@@@@@@@@@@@* %
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@%  #
+                                                      %@@@@@@@@@@@@@@@@@@@@@@@@@# *
+                                                      /&@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                   .%(@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                (&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+                                                 %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %
+                                                 %&@@@@@@@@@@@@@@@@@@@@@@@@@@@@% ,
+                                          ,/(#(   ,#@@@@@@@@@@@@@@@@@@@@@@@@@%# (
+                                 .%#.           %    .%@@@@@@@@@@@@@@@@@@@@%#  %
+                             .%.                 .%   ,&@@@@@@@@@@@@@@@@@%.  */
+                          %/                        ,%  (%&@@@@@@@@@(%(    (/
+                      #(                                ,%&,         .(%(
+                  .%.
+               %(
+           /%
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+    _____                                   _   _
+    |  _  |                                 | | (_)
+    | | | |_  ____  _  __ _  ___ _ __   __ _| |_ _ _ __   __ _
+    | | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` |
+    \ \_/ />  <|\ |_| | (_| |  __/ | | | (_| | |_| | | | | (_| |_ _ _
+    \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, (_|_|_)
+             __/ | __/ |                              __/ |
+            |___/ |___/                              |___/
+
+    Answer the question corretly to oxygenate the blood
+                    """)
                     g.goto = "other vital organs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -1929,7 +2092,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1961,7 +2124,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -1993,7 +2156,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2025,7 +2188,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2057,7 +2220,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2089,7 +2252,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2121,7 +2284,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2153,7 +2316,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2185,7 +2348,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2217,7 +2380,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2249,7 +2412,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2281,7 +2444,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2313,7 +2476,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2345,14 +2508,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -2377,7 +2540,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2409,7 +2572,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2441,7 +2604,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2473,7 +2636,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2505,7 +2668,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2537,7 +2700,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2569,7 +2732,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2601,7 +2764,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2615,8 +2778,72 @@ def game():
 
 
             elif main in ('3'):
+                clear()
                 global menu
                 if g.viorgans == 1:
+                    clear()
+                    print ("""\033[1;31;40m
+
+                   @@@@@
+                   @@@@@
+                   @@@@@
+                   @@@@@.      (@@@@
+                    @@@@@/  @@@@@@@@@@@
+                    #@@@@@@@@@@@@@@@@@@@@
+                       @@@@@@@@@@@@@@@@@@@
+                         @@@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                          %@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                         #@@@@@@@@@@@@@@@@@
+                        @@@@@@@@@@@@@@@@@@
+         /&*         %@@@@@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@#      @@@@@@@@@@@@@@@@@@@@@(
+    @@@@@          @@@@@@@@@@@@@@@@
+    @@@@               .@@@@@@@
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+                   @@@@@
+                   @@@@@
+                   @@@@@
+                   @@@@@.      (@@@@
+                    @@@@@/  @@@@@@@@@@@
+                    #@@@@@@@@@@@@@@@@@@@@
+                       @@@@@@@@@@@@@@@@@@@
+                         @@@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                          %@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                         #@@@@@@@@@@@@@@@@@
+                        @@@@@@@@@@@@@@@@@@
+         /&*         %@@@@@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@#      @@@@@@@@@@@@@@@@@@@@@(
+    @@@@@          @@@@@@@@@@@@@@@@
+    @@@@               .@@@@@@@
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+    _____                                   _   _
+    |  _  |                                 | | (_)
+    | | | |_  ____  _  __ _  ___ _ __   __ _| |_ _ _ __   __ _
+    | | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` |
+    \ \_/ />  <|\ |_| | (_| |  __/ | | | (_| | |_| | | | | (_| |_ _ _
+    \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, (_|_|_)
+             __/ | __/ |                              __/ |
+            |___/ |___/                              |___/
+
+    Answer the question corretly to oxygenate the blood
+                    """)
                     print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
@@ -2631,7 +2858,7 @@ def game():
                         game_menu()
                 elif g.oxy == 1:
                     g.goto = "other vital organs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -2659,7 +2886,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2691,7 +2918,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2723,7 +2950,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2755,7 +2982,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2787,7 +3014,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2819,7 +3046,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2851,7 +3078,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2883,7 +3110,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2915,7 +3142,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2947,7 +3174,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -2979,7 +3206,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3011,7 +3238,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3043,7 +3270,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3075,14 +3302,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -3107,7 +3334,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3139,7 +3366,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3171,7 +3398,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3203,7 +3430,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3235,7 +3462,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3267,7 +3494,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3299,7 +3526,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3331,7 +3558,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3360,8 +3587,77 @@ def game():
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
+                    clear()
+                    print ("""\033[1;31;40m
+
+                                                 &
+                                          ,@@(#@@(@
+                                           (@@@@@@@@@
+                                           /((((%@@@@@@@&(,
+       .                                             (@@@@@@@@@@(
+                                                         #@@@@@@@@@@@@@@@@@@@%#
+ *@@@@           .((///((.             ./(/(@&&/(%#,         ,(@@@@@@@@@@@@@@@@@@
+ (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%/       (@@@@@@@@@@@@(
+          ,#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(
+                     /#/,..#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%     (@@#%&(
+                                       .(&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                              #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                              #%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+            .((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#      #@ (/
+ #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ &@@@@#.,(#@@@@@@@@@@@@@@@@@@@//%@@@@@@@@@@@@@@@@@@@@@@@@@#         *#(@@@@@@@@@@
+  @(                                                           (@@@@@@@@@@@@@@@@
+                                                         *@@@@@@@@@@@@@%@@@@&(
+                                                      /@@@@@@@@@(
+                                                 /#@@@@@@@@@#
+                                             .@@@@@@@@@.
+                                             (@@@@@.
+                                             @#  @
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+                                                 &
+                                          ,@@(#@@(@
+                                           (@@@@@@@@@
+                                           /((((%@@@@@@@&(,
+       .                                             (@@@@@@@@@@(
+                                                         #@@@@@@@@@@@@@@@@@@@%#
+ *@@@@           .((///((.             ./(/(@&&/(%#,         ,(@@@@@@@@@@@@@@@@@@
+ (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%/       (@@@@@@@@@@@@(
+          ,#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(
+                     /#/,..#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%     (@@#%&(
+                                       .(&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                              #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                              #%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+            .((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#      #@ (/
+ #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ &@@@@#.,(#@@@@@@@@@@@@@@@@@@@//%@@@@@@@@@@@@@@@@@@@@@@@@@#         *#(@@@@@@@@@@
+  @(                                                           (@@@@@@@@@@@@@@@@
+                                                         *@@@@@@@@@@@@@%@@@@&(
+                                                      /@@@@@@@@@(
+                                                 /#@@@@@@@@@#
+                                             .@@@@@@@@@.
+                                             (@@@@@.
+                                             @#  @
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+ _____                                   _   _
+|  _  |                                 | | (_)
+| | | |_  ____  _  __ _  ___ _ __   __ _| |_ _ _ __   __ _
+| | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` |
+\ \_/ />  <|\ |_| | (_| |  __/ | | | (_| | |_| | | | | (_| |_ _ _
+ \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, (_|_|_)
+             __/ | __/ |                              __/ |
+            |___/ |___/                              |___/
+
+Answer the question corretly to oxygenate the blood
+                    """)
                     g.goto = "other vital organs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -3389,7 +3685,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3421,7 +3717,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3453,7 +3749,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3485,7 +3781,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3517,7 +3813,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3549,7 +3845,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3581,7 +3877,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3613,7 +3909,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3645,7 +3941,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3677,7 +3973,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3709,7 +4005,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3741,7 +4037,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3773,7 +4069,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3805,14 +4101,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -3837,7 +4133,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3869,7 +4165,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3901,7 +4197,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3933,7 +4229,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3965,7 +4261,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -3997,7 +4293,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4029,7 +4325,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4061,7 +4357,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4086,7 +4382,9 @@ def game():
                                                             |     You are in:     Your heart rate is:   |
                                                             |        """ + g.location + """                 """ + str(g.bpmint) + """           |
                                                             |                                           |
-                                                            |         Where do you want to go?          |
+                                                            |           """ + g.oxygen + """          |
+                                                            |                                           |
+                                                            |          Where do you want to go?         |
                                                             |                                           |
                                                             |  1. Lungs                                 |
                                                             |  2. Brain                                 |
@@ -4097,10 +4395,79 @@ def game():
             """)
             main = input(g.location + "@" + g.bpm + "bpm\ ")
             if main == ('1'):
+                clear()
                 global menu
                 if g.oxy == 0:
+                    clear()
+                    print ("""\033[1;31;40m
+
+              *, ,   ,*/*(
+              (#(/,,/((#*,
+               **%(//#%(/**
+          /####*.#/(/(#/*,,,*//
+          #/,*#**(%#(((((((((
+        #%(/**%(#%&%(/#%&(#(*
+      (%//(##%&%&#%#(*#%&/#(.
+     (***/(##%&&@%#((*(%#/#/
+    (*,,*/(#%&&&%&#(((#%&%&%&&
+    /,,**/##%&%&#(/////##%&%&&&
+    /****/##%&%&(//*,,*(%&%&%&&%
+    (**//%(####((/*,,,*(%&%&%&&&,
+     (//#/((((((//**,*/(/%&^%&&&%
+      (//////((((*//*//(#&%&%&&
+       (//***//((*(//(#(#%$%&&&
+       ./*,,,**//(((/#(%###%$%&&&
+         (*,,,***//((((####%@%&&&
+          ((/****//(((##(###@%&&&.
+            ####((((#######%$%&&&/
+               .$$$$$$$$$$$$&&&&&
+                     &&&&&&&%#
+
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+              *, ,   ,*/*(
+              (#(/,,/((#*,
+               **%(//#%(/**
+          /####*.#/(/(#/*,,,*//
+          #/,*#**(%#(((((((((
+        #%(/**%(#%&%(/#%&(#(*
+      (%//(##%&%&#%#(*#%&/#(.
+     (***/(##%&&@%#((*(%#/#/
+    (*,,*/(#%&&&%&#(((#%&%&%&&
+    /,,**/##%&%&#(/////##%&%&&&
+    /****/##%&%&(//*,,*(%&%&%&&%
+    (**//%(####((/*,,,*(%&%&%&&&,
+     (//#/((((((//**,*/(/%&^%&&&%
+      (//////((((*//*//(#&%&%&&
+       (//***//((*(//(#(#%$%&&&
+       ./*,,,**//(((/#(%###%$%&&&
+         (*,,,***//((((####%@%&&&
+          ((/****//(((##(###@%&&&.
+            ####((((#######%$%&&&/
+               .$$$$$$$$$$$$&&&&&
+                     &&&&&&&%#
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+     _____                                    _   _               _   _            _     _                 _
+    |  _  |                                  | | (_)             | | | |          | |   | |               | |
+    | | | |_  ____   _  __ _  ___ _ __   __ _| |_ _ _ __   __ _  | |_| |__   ___  | |__ | | ___   ___   __| |
+    | | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` | | __| '_ \ / _ \ | '_ \| |/ _ \ / _ \ / _` |
+    \ \_/ />  <|  |_| | (_| |  __/ | | | (_| | |_| | | | | (_| | | |_| | | |  __/ | |_) | | (_) | (_) | (_| |_ _ _
+     \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, |  \__|_| |_|\___| |_.__/|_|\___/ \___/ \__,_(_|_|_)
+                  __/ | __/ |                              __/ |
+                 |___/ |___/                              |___/
+
+    Answer the question corretly to oxygenate the blood
+                    """)
                     g.goto = "lungs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -4128,7 +4495,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4160,7 +4527,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4192,7 +4559,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4224,7 +4591,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4256,7 +4623,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4288,7 +4655,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4320,7 +4687,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4352,7 +4719,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4384,7 +4751,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4416,7 +4783,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4448,7 +4815,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4480,7 +4847,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4512,7 +4879,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4544,14 +4911,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -4576,7 +4943,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4608,7 +4975,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4640,7 +5007,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4672,7 +5039,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4704,7 +5071,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4736,7 +5103,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4768,7 +5135,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -4800,7 +5167,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5008,7 +5375,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5066,7 +5433,7 @@ def game():
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -5205,6 +5572,7 @@ def game():
 
 
             elif main in ('2'):
+                clear()
                 global menu
                 if g.brain == 1:
                     print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
@@ -5220,8 +5588,89 @@ def game():
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
+                    clear()
+                    print ("""\033[1;31;40m
+
+                                                ..   %
+                                          ###  *.      /#
+                                  %                           .,/#%$#.
+                                  *                                     .%,
+    .%.                          *                            *#@@@@@@@&%   %
+        %,                       #                           *@@@@@@@@@@@@&.  %
+           %                     %                           %@@@@@@@@@@@@@@%  #
+             %                  %                            #@@@@@@@@@@@@@@@@( (
+               #(     .,,.    //                        /(@@&@@@@@@@@@@@@@@@@@@* %
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@%  #
+                                                      %@@@@@@@@@@@@@@@@@@@@@@@@@# *
+                                                      /&@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                   .%(@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                (&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+                                                 %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %
+                                                 %&@@@@@@@@@@@@@@@@@@@@@@@@@@@@% ,
+                                          ,/(#(   ,#@@@@@@@@@@@@@@@@@@@@@@@@@%# (
+                                 .%#.           %    .%@@@@@@@@@@@@@@@@@@@@%#  %
+                             .%.                 .%   ,&@@@@@@@@@@@@@@@@@%.  */
+                          %/                        ,%  (%&@@@@@@@@@(%(    (/
+                      #(                                ,%&,         .(%(
+                  .%.
+               %(
+           /%
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+                                                ..   %
+                                          ###  *.      /#
+                                  %                           .,/#%$#.
+                                  *                                     .%,
+    .%.                          *                            *#@@@@@@@&%   %
+        %,                       #                           *@@@@@@@@@@@@&.  %
+           %                     %                           %@@@@@@@@@@@@@@%  #
+             %                  %                            #@@@@@@@@@@@@@@@@( (
+               #(     .,,.    //                        /(@@&@@@@@@@@@@@@@@@@@@* %
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@%  #
+                                                      %@@@@@@@@@@@@@@@@@@@@@@@@@# *
+                                                      /&@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                       %@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                   .%(@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                               %@@.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+                                                (&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+                                                (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+                                                 %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %
+                                                 %&@@@@@@@@@@@@@@@@@@@@@@@@@@@@% ,
+                                          ,/(#(   ,#@@@@@@@@@@@@@@@@@@@@@@@@@%# (
+                                 .%#.           %    .%@@@@@@@@@@@@@@@@@@@@%#  %
+                             .%.                 .%   ,&@@@@@@@@@@@@@@@@@%.  */
+                          %/                        ,%  (%&@@@@@@@@@(%(    (/
+                      #(                                ,%&,         .(%(
+                  .%.
+               %(
+           /%
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+    _____                                   _   _
+    |  _  |                                 | | (_)
+    | | | |_  ____  _  __ _  ___ _ __   __ _| |_ _ _ __   __ _
+    | | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` |
+    \ \_/ />  <|\ |_| | (_| |  __/ | | | (_| | |_| | | | | (_| |_ _ _
+    \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, (_|_|_)
+             __/ | __/ |                              __/ |
+            |___/ |___/                              |___/
+
+    Answer the question corretly to oxygenate the blood
+                    """)
                     g.goto = "other vital organs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -5249,7 +5698,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5281,7 +5730,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5313,7 +5762,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5345,7 +5794,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5377,7 +5826,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5409,7 +5858,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5441,7 +5890,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5473,7 +5922,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5505,7 +5954,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5537,7 +5986,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5569,7 +6018,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5601,7 +6050,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5633,7 +6082,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5665,14 +6114,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -5697,7 +6146,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5729,7 +6178,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5761,7 +6210,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5793,7 +6242,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5825,7 +6274,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5857,7 +6306,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5889,7 +6338,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5921,7 +6370,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -5935,8 +6384,72 @@ def game():
 
 
             elif main in ('3'):
+                clear()
                 global menu
                 if g.viorgans == 1:
+                    clear()
+                    print ("""\033[1;31;40m
+
+                   @@@@@
+                   @@@@@
+                   @@@@@
+                   @@@@@.      (@@@@
+                    @@@@@/  @@@@@@@@@@@
+                    #@@@@@@@@@@@@@@@@@@@@
+                       @@@@@@@@@@@@@@@@@@@
+                         @@@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                          %@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                         #@@@@@@@@@@@@@@@@@
+                        @@@@@@@@@@@@@@@@@@
+         /&*         %@@@@@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@#      @@@@@@@@@@@@@@@@@@@@@(
+    @@@@@          @@@@@@@@@@@@@@@@
+    @@@@               .@@@@@@@
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+                   @@@@@
+                   @@@@@
+                   @@@@@
+                   @@@@@.      (@@@@
+                    @@@@@/  @@@@@@@@@@@
+                    #@@@@@@@@@@@@@@@@@@@@
+                       @@@@@@@@@@@@@@@@@@@
+                         @@@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                          %@@@@@@@@@@@@@@@@
+                          @@@@@@@@@@@@@@@@@
+                         #@@@@@@@@@@@@@@@@@
+                        @@@@@@@@@@@@@@@@@@
+         /&*         %@@@@@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,
+     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@#      @@@@@@@@@@@@@@@@@@@@@(
+    @@@@@          @@@@@@@@@@@@@@@@
+    @@@@               .@@@@@@@
+
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+    _____                                   _   _
+    |  _  |                                 | | (_)
+    | | | |_  ____  _  __ _  ___ _ __   __ _| |_ _ _ __   __ _
+    | | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` |
+    \ \_/ />  <|\ |_| | (_| |  __/ | | | (_| | |_| | | | | (_| |_ _ _
+    \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, (_|_|_)
+             __/ | __/ |                              __/ |
+            |___/ |___/                              |___/
+
+    Answer the question corretly to oxygenate the blood
+                    """)
                     print ("Oh no! Your blood has already been here and it hasn't been to any other parts of the body yet! Your heart rate has doubled to try and correct itself")
                     print ("To reduce the increase in heart rate answer the following question correctly:")
                     test = input("test")
@@ -5951,7 +6464,7 @@ def game():
                         game_menu()
                 elif g.oxy == 1:
                     g.goto = "other vital organs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -5979,7 +6492,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6011,7 +6524,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6043,7 +6556,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6075,7 +6588,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6107,7 +6620,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6139,7 +6652,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6171,7 +6684,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6203,7 +6716,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6235,7 +6748,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6267,7 +6780,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6299,7 +6812,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6331,7 +6844,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6363,7 +6876,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6395,14 +6908,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -6427,7 +6940,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6459,7 +6972,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6491,7 +7004,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6523,7 +7036,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6555,7 +7068,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6587,7 +7100,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6619,7 +7132,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6651,7 +7164,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6680,8 +7193,77 @@ def game():
                         g.bpmint = g.bpmint * 2
                         game_menu()
                 elif g.oxy == 1:
+                    clear()
+                    print ("""\033[1;31;40m
+
+                                                 &
+                                          ,@@(#@@(@
+                                           (@@@@@@@@@
+                                           /((((%@@@@@@@&(,
+       .                                             (@@@@@@@@@@(
+                                                         #@@@@@@@@@@@@@@@@@@@%#
+ *@@@@           .((///((.             ./(/(@&&/(%#,         ,(@@@@@@@@@@@@@@@@@@
+ (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%/       (@@@@@@@@@@@@(
+          ,#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(
+                     /#/,..#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%     (@@#%&(
+                                       .(&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                              #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                              #%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+            .((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#      #@ (/
+ #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ &@@@@#.,(#@@@@@@@@@@@@@@@@@@@//%@@@@@@@@@@@@@@@@@@@@@@@@@#         *#(@@@@@@@@@@
+  @(                                                           (@@@@@@@@@@@@@@@@
+                                                         *@@@@@@@@@@@@@%@@@@&(
+                                                      /@@@@@@@@@(
+                                                 /#@@@@@@@@@#
+                                             .@@@@@@@@@.
+                                             (@@@@@.
+                                             @#  @
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+
+                                                 &
+                                          ,@@(#@@(@
+                                           (@@@@@@@@@
+                                           /((((%@@@@@@@&(,
+       .                                             (@@@@@@@@@@(
+                                                         #@@@@@@@@@@@@@@@@@@@%#
+ *@@@@           .((///((.             ./(/(@&&/(%#,         ,(@@@@@@@@@@@@@@@@@@
+ (@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%/       (@@@@@@@@@@@@(
+          ,#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(
+                     /#/,..#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%     (@@#%&(
+                                       .(&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                              #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                              #%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+            .((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#      #@ (/
+ #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ &@@@@#.,(#@@@@@@@@@@@@@@@@@@@//%@@@@@@@@@@@@@@@@@@@@@@@@@#         *#(@@@@@@@@@@
+  @(                                                           (@@@@@@@@@@@@@@@@
+                                                         *@@@@@@@@@@@@@%@@@@&(
+                                                      /@@@@@@@@@(
+                                                 /#@@@@@@@@@#
+                                             .@@@@@@@@@.
+                                             (@@@@@.
+                                             @#  @
+                    """)
+                    time.sleep(2)
+                    clear()
+                    print ("""\033[1;32;40m
+ _____                                   _   _
+|  _  |                                 | | (_)
+| | | |_  ____  _  __ _  ___ _ __   __ _| |_ _ _ __   __ _
+| | | \ \/ /  | | |/ _` |/ _ \ '_ \ / _` | __| | '_ \ / _` |
+\ \_/ />  <|\ |_| | (_| |  __/ | | | (_| | |_| | | | | (_| |_ _ _
+ \___//_/\_\ \__, |\__, |\___|_| |_|\__,_|\__|_|_| |_|\__, (_|_|_)
+             __/ | __/ |                              __/ |
+            |___/ |___/                              |___/
+
+Answer the question corretly to oxygenate the blood
+                    """)
                     g.goto = "other vital organs"
-                    test = random.randint(0,7)
+                    test = random.randint(0,21)
                     if test == 0:
                         print ("What does the heart do?")
                         print ("A. Pump de-oxygenated red blood cells around the body \nB. Pump oxygenated blood cells around the body \nC. Pumps love around the body \nD. Looks good")
@@ -6709,7 +7291,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6741,7 +7323,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6773,7 +7355,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6805,7 +7387,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6837,7 +7419,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6869,7 +7451,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6901,7 +7483,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6933,7 +7515,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6965,7 +7547,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -6997,7 +7579,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7029,7 +7611,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7061,7 +7643,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7093,7 +7675,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7125,14 +7707,14 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
                             game_menu()
                     elif test == 14:
                         print ("The blood vessel that carries deoxygenated blood from the body to the right side of the heart is called the?")
-                        print ("A. Aorta \nB. Pulmonary vein \n C. Pulmonary artery \nD. Vena Cava")
+                        print ("A. Aorta \nB. Pulmonary vein \nC. Pulmonary artery \nD. Vena Cava")
                         a = "d"
                         b = "vena cava"
                         answer = input(":$ ")
@@ -7157,7 +7739,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7189,7 +7771,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7221,7 +7803,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7253,7 +7835,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7285,7 +7867,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7317,7 +7899,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7349,7 +7931,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
@@ -7381,7 +7963,7 @@ def game():
                             enter = input("Press any key to continue")
                             game_menu()
                         else:
-                            print ("No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
+                            print ("\033[1;31;40m No that's not right. Remember everytime you get a question wrong your heart rate goes up by 10 \n")
                             print ("Make sure you come back because you can't go through an organ until you have gotten the question right!")
                             enter = input("Press any key to continue")
                             g.bpmint = g.bpmint + 10
