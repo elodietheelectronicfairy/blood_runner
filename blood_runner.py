@@ -8006,6 +8006,7 @@ ______ _                 _  ______
 |   0. Exits game (type exit to exit from main menu inside game)                                        |
 |=======================================================================================================|
     """)
+    print ("\033[1;31;40m Make sure to keep your heart rate below 250 bpm OR YOU WILL DIE!
 
     main = input(":$ ")
 
