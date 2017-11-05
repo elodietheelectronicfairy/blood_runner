@@ -10298,8 +10298,9 @@ ______ _                 _  ______
 |   0. Exits game (type exit to exit from main menu inside game)                                        |
 |=======================================================================================================|
     """)
-
-    main = input(":$ ")
+    time.sleep(.5)
+    print ("\033[1;31;40m *WARNING* If your heart rate gets above 250bpm YOU WILL DIE \n(if hard mode is enabled and your heart rate reaches 150bpm YOU WILL DIE")
+    main = input("\033[1;32;40m :$ ")
 
     if main in ('1'):
         clear()
